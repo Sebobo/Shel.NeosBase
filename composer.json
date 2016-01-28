@@ -1,0 +1,14 @@
+{
+    "name": "shel/neosbase",
+    "type": "typo3-flow-package",
+    "description": "Neos CMS base helper package",
+    "license": "MIT",
+    "require": {
+        "typo3/neos": "~2.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "Shel\\NeosBase": "Classes"
+        }
+    }
+}
