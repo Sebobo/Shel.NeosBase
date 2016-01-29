@@ -4,7 +4,8 @@
     "description": "Neos CMS base helper package",
     "license": "MIT",
     "require": {
-        "typo3/neos": "~2.1"
+        "typo3/neos": "~2.1",
+        "typo3/surf": "~0.9.0"
     },
     "autoload": {
         "psr-0": {
