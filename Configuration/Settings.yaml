@@ -1,0 +1,10 @@
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'Shel.NeosBase': true
+
+    userInterface:
+      translation:
+        autoInclude:
+          'Shel.NeosBase': ['NodeTypes/*']

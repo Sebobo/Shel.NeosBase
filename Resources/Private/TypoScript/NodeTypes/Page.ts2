@@ -1,0 +1,73 @@
+prototype(TYPO3.Neos:Page) {
+    # Don't render unnecessary lastVisitedNodeScript in live workspace
+    lastVisitedNodeScript.@if.notLive = ${node.context.workspace.name != 'live'}
+
+    head {
+        viewportTag = TYPO3.TypoScript:Tag {
+            tagName = 'meta'
+            attributes {
+                name = 'viewport'
+                content = 'width=device-width, initial-scale=1'
+            }
+        }
+
+        ieCompatibilityTag = TYPO3.TypoScript:Tag {
+            tagName = 'meta'
+            attributes {
+                http-equiv = 'X-UA-Compatible'
+                content = 'IE=edge'
+            }
+            @position = 'start'
+        }
+
+        authorTag = TYPO3.TypoScript:Tag {
+            tagName = 'meta'
+            authorName = ''
+            @context.authorName = ${this.authorName}
+            attributes {
+                name = 'author'
+                content = ${authorName}
+            }
+            @if.isNotBlank = ${!String.isBlank(authorName)}
+        }
+
+        appleTouchIconTag = TYPO3.TypoScript:Tag {
+            tagName = 'link'
+            iconPath = ''
+            @context.iconPath = ${this.iconPath}
+            attributes {
+                rel = 'apple-touch-icon'
+            }
+            @if.isNotBlank = ${!String.isBlank(iconPath)}
+        }
+
+        stylesheets {
+            main = TYPO3.TypoScript:Tag {
+                tagName = 'link'
+                cssPath = ''
+                @context.cssPath = ${this.cssPath}
+                attributes {
+                    rel = 'stylesheet'
+                    media = 'all'
+                    href = TYPO3.TypoScript:ResourceUri {
+                        path = ${cssPath}
+                    }
+                }
+                @if.isNotBlank = ${!String.isBlank(cssPath)}
+            }
+        }
+    }
+
+    body {
+        javascripts {
+            app = TYPO3.TypoScript:Tag {
+                tagName = 'script'
+                attributes {
+                    async = 'async'
+                    href = TYPO3.TypoScript:ResourceUri
+                }
+                @if.isNotBlank = ${!String.isBlank(this.attributes.href.path)}
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+prototype(Shel.NeosBase:Navigation) < prototype(TYPO3.Neos:Menu) {
+    templatePath = 'resource://Shel.NeosBase/Private/Templates/TypoScriptObjects/Menu.html'
+    sectionName = 'Menu'
+    filter = 'TYPO3.Neos:Document'
+    entryLevel = 1
+    maximumLevels = 3
+}
