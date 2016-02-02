@@ -1,1 +1,2 @@
 include: NodeTypes/**/*.ts2
+include: TypoScriptObjects/**/*.ts2
