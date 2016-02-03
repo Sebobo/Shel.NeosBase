@@ -37,6 +37,24 @@ prototype(TYPO3.Neos:Page) {
             @context.iconPath = ${this.iconPath}
             attributes {
                 rel = 'apple-touch-icon'
+                href = TYPO3.TypoScript:ResourceUri {
+                    path = ${iconPath}
+                }
+            }
+            @if.isNotBlank = ${!String.isBlank(iconPath)}
+        }
+
+        faviconTag = TYPO3.TypoScript:Tag {
+            tagName = 'link'
+            iconPath = ''
+            @context.iconPath = ${this.iconPath}
+            attributes {
+                rel = 'shortcut icon'
+                type = 'image/x-icon'
+                href = TYPO3.TypoScript:ResourceUri {
+                    path = ${iconPath}
+                }
+
             }
             @if.isNotBlank = ${!String.isBlank(iconPath)}
         }
