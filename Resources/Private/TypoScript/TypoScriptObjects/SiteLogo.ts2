@@ -1,0 +1,22 @@
+prototype(Shel.NeosBase:SiteLogo) < prototype(TYPO3.TypoScript:Template) {
+    templatePath = 'resource://Shel.NeosBase/Private/Templates/TypoScriptObjects/SiteLogo.html'
+    sectionName = 'SiteLogo'
+    attributes = TYPO3.TypoScript:Attributes {
+        class = 'site-logo'
+    }
+
+    targetNode = ${site}
+    logoSrc = ''
+    @context.logoSrc = ${this.logoSrc}
+
+    logo = TYPO3.TypoScript:Tag {
+        tagName = 'img'
+        attributes {
+            alt = 'Site logo'
+            src = TYPO3.TypoScript:ResourceUri {
+                path = ${logoSrc}
+            }
+        }
+    }
+    @if.isNotBlank = ${!String.isBlank(logoSrc)}
+}
