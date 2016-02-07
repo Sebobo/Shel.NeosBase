@@ -86,6 +86,15 @@ prototype(TYPO3.Neos:Page) {
                 }
                 @if.isNotBlank = ${!String.isBlank(this.attributes.href.path)}
             }
+
+            liveReload = TYPO3.TypoScript:Tag {
+                tagName = 'script'
+                content = 'document.write(\'<script src="http://\' + (location.host || \'localhost\').split(\':\')[0] + \':35729/livereload.js?snipver=1"></\' + \'script>\')'
+                @if {
+                    inLiveWorkspace = ${node.context.workspaceName == 'live'}
+                    isEnabled = ${Configuration.setting('Shel.NeosBase.debug.liveReload.enabled')}
+                }
+            }
         }
     }
 }

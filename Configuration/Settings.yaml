@@ -8,3 +8,9 @@ TYPO3:
       translation:
         autoInclude:
           'Shel.NeosBase': ['NodeTypes/*']
+
+Shel:
+  NeosBase:
+    debug:
+      liveReload:
+        enabled: false
