@@ -80,11 +80,15 @@ prototype(TYPO3.Neos:Page) {
         javascripts {
             app = TYPO3.TypoScript:Tag {
                 tagName = 'script'
+                scriptPath = ''
+                @context.scriptPath = ${this.scriptPath}
                 attributes {
                     async = 'async'
-                    href = TYPO3.TypoScript:ResourceUri
+                    src = TYPO3.TypoScript:ResourceUri {
+                        path = ${scriptPath}
+                    }
                 }
-                @if.isNotBlank = ${!String.isBlank(this.attributes.href.path)}
+                @if.isNotBlank = ${!String.isBlank(scriptPath)}
             }
 
             liveReload = TYPO3.TypoScript:Tag {
