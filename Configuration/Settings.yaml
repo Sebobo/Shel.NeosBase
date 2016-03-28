@@ -9,6 +9,23 @@ TYPO3:
         autoInclude:
           'Shel.NeosBase': ['NodeTypes/*']
 
+  Form:
+    presets:
+      default:
+        formElementTypes:
+          'Shel.NeosBase:Honeypot':
+            superTypes:
+              - 'TYPO3.Form:SingleLineText'
+            properties:
+              elementClassAttribute: 'hidden'
+            renderingOptions:
+              templatePathPattern: 'resource://{@package}/Private/Form/{@type}.html'
+            validators:
+              - identifier: 'Shel.NeosBase:IsEmpty'
+        validatorPresets:
+          'Shel.NeosBase:IsEmpty':
+            implementationClassName: 'Shel\NeosBase\Validation\Validator\IsEmptyValidator'
+
 Shel:
   NeosBase:
     debug:
