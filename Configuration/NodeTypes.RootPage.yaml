@@ -1,0 +1,5 @@
+'Shel.NeosBase:RootPage':
+  superTypes:
+    'TYPO3.Neos.NodeTypes:Page': true
+  ui:
+    label: i18n
