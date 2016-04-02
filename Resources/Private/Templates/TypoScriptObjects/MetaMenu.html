@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:neos="http://typo3.org/ns/TYPO3/Neos/ViewHelpers">
+<f:section name="Main">
+    <nav{attributes -> f:format.raw()}>
+        <ul>
+            <f:for each="{items}" as="item">
+                <li>
+                    <neos:link.node node="{item.node}"
+                                    title="{f:if(condition: item.properties.titleOverride, then: item.properties.titleOverride, else: item.label)}"/>
+                </li>
+            </f:for>
+        </ul>
+    </nav>
+</f:section>
+</html>

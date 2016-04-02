@@ -1,0 +1,10 @@
+'Shel.NeosBase:MetaMenuMixin':
+  abstract: true
+  properties:
+    showInMetaMenu:
+      type: boolean
+      ui:
+        label: i18n
+        reloadPageIfChanged: true
+        inspector:
+          group: visibility
