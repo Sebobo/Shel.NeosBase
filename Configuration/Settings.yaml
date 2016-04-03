@@ -31,3 +31,4 @@ Shel:
     debug:
       liveReload:
         enabled: false
+        port: 35729
