@@ -78,7 +78,7 @@ prototype(TYPO3.Neos:Page) {
 
     body {
         javascripts {
-            app = TYPO3.TypoScript:Tag {
+            bundle = TYPO3.TypoScript:Tag {
                 tagName = 'script'
                 scriptPath = ''
                 @context.scriptPath = ${this.scriptPath}
