@@ -95,12 +95,6 @@ class NeosApplication extends Flow
                     ->setTaskOptions('typo3.surf:generic:createDirectories', [
                         'directories' => [
                             'shared/Data/Web/_Resources',
-                            'shared/Data/Session',
-                        ]
-                    ])
-                    ->setTaskOptions('typo3.surf:generic:createSymlinks', [
-                        'symlinks' => [
-                            'Data/Session' => '../../../shared/Data/Session/',
                         ]
                     ]);
 
