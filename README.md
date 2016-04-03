@@ -32,8 +32,28 @@ with other packages to quickly setup a new website.
 
 * `IsEmptyValidator` - for the included HoneyPot form element. 
 
-### Basic TypoScript for page rendering
+### Enhanced TypoScript for page rendering
 
-* Adds additional configurable meta tags in the page header (f.e. css, author, ie compatibility, viewport, favicon, etc...). See `Page.ts2` for details.
-* Configurable live reload script when you are developing. See `Settings.yaml` for the configuration.
-* Script tag to load js bundle. See `Page.ts2` for details.
+#### Page rendering
+
+This package uses the alternative page rendering described in the [Neos documentation](http://neos.readthedocs.org/en/stable/HowTos/SelectingPageTemplate.html#using-a-defaultpage-prototype).
+The basic prototype to extend from is `Shel.NeosBase:DefaultPage`. 
+Read the Neos documentation about how to add your own page layouts. 
+ 
+#### Additional html head parts 
+
+Adds additional configurable meta tags in the page header (f.e. css, author, ie compatibility, viewport, favicon, etc...). 
+See the prototype `Shel.NeosBase:DefaultPage` for details.
+
+#### Additional html body parts
+
+Also included is a configurable live reload script when you are developing your stylesheets. 
+See `Settings.yaml` for the configuration.
+
+To easily include your javascript bundle see the ts path `body.javascripts.bundle`.
+
+#### TypoScript objects
+
+* `Shel.NeosBase:Navigation` is a menu to be used for the main site navigation
+* `Shel.NeosBase:MetaMenu` is a menu which renders all documents marked with the `Show in meta menu` property, provided by the `Shel.NeosBase:MetaMenuMixin`.
+* `Shel.NeosBase:SiteLogo` is a configurable helper to render the site logo including the link to the homepage
