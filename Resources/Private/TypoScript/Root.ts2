@@ -1,2 +1,8 @@
-include: NodeTypes/**/*.ts2
 include: TypoScriptObjects/**/*.ts2
+
+root {
+    default {
+        type = ${q(node).property('_nodeType') + '.Document'}
+        renderPath >
+    }
+}
