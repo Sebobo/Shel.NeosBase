@@ -1,0 +1,6 @@
+prototype(Shel.NeosBase:StyleSheetTag) < prototype(Shel.NeosBase:LinkTag) {
+    attributes {
+        rel = 'stylesheet'
+        media = 'all'
+    }
+}

@@ -1,0 +1,24 @@
+prototype(Shel.NeosBase:LinkTag) < prototype(TYPO3.TypoScript:Tag) {
+    tagName = 'link'
+
+    src = ''
+    href = ''
+
+    @context {
+        src = ${this.src}
+        href = ${this.href}
+    }
+
+    attributes {
+        src = TYPO3.TypoScript:ResourceUri {
+            path = ${src}
+            @if.set = ${!String.isBlank(src)}
+        }
+        href = TYPO3.TypoScript:ResourceUri {
+            path = ${href}
+            @if.set = ${!String.isBlank(href)}
+        }
+    }
+
+    @if.isNotBlank = ${!String.isBlank(href) || !String.isBlank(src)}
+}

@@ -1,0 +1,17 @@
+prototype(Shel.NeosBase:ScriptTag) < prototype(TYPO3.TypoScript:Tag) {
+    tagName = 'script'
+    src = ''
+    async = null
+    @context {
+        src = ${this.src}
+        async = ${this.async}
+    }
+    attributes {
+        async = ${async ? 'async' : null}
+        async.@if.set = ${async}
+        src = TYPO3.TypoScript:ResourceUri {
+            path = ${src}
+        }
+    }
+    @if.isNotBlank = ${!String.isBlank(src)}
+}

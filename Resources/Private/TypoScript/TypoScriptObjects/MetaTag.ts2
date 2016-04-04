@@ -1,0 +1,4 @@
+prototype(Shel.NeosBase:MetaTag) < prototype(TYPO3.TypoScript:Tag) {
+    tagName = 'meta'
+    @position = 'before stylesheets'
+}

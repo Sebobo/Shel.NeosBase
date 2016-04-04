@@ -2,17 +2,21 @@ prototype(Shel.NeosBase:DefaultPage) < prototype(TYPO3.Neos:Page) {
     # Don't render unnecessary lastVisitedNodeScript in live workspace
     lastVisitedNodeScript.@if.notLive = ${node.context.workspace.name != 'live'}
 
+    htmlTag {
+        attributes {
+            class = 'no-js'
+        }
+    }
+
     head {
-        viewportTag = TYPO3.TypoScript:Tag {
-            tagName = 'meta'
+        viewportTag = Shel.NeosBase:MetaTag {
             attributes {
                 name = 'viewport'
                 content = 'width=device-width, initial-scale=1'
             }
         }
 
-        ieCompatibilityTag = TYPO3.TypoScript:Tag {
-            tagName = 'meta'
+        ieCompatibilityTag = Shel.NeosBase:MetaTag {
             attributes {
                 http-equiv = 'X-UA-Compatible'
                 content = 'IE=edge'
@@ -20,8 +24,7 @@ prototype(Shel.NeosBase:DefaultPage) < prototype(TYPO3.Neos:Page) {
             @position = 'start'
         }
 
-        authorTag = TYPO3.TypoScript:Tag {
-            tagName = 'meta'
+        authorTag = Shel.NeosBase:MetaTag {
             authorName = ''
             @context.authorName = ${this.authorName}
             attributes {
@@ -31,64 +34,35 @@ prototype(Shel.NeosBase:DefaultPage) < prototype(TYPO3.Neos:Page) {
             @if.isNotBlank = ${!String.isBlank(authorName)}
         }
 
-        appleTouchIconTag = TYPO3.TypoScript:Tag {
-            tagName = 'link'
-            iconPath = ''
-            @context.iconPath = ${this.iconPath}
-            attributes {
-                rel = 'apple-touch-icon'
-                href = TYPO3.TypoScript:ResourceUri {
-                    path = ${iconPath}
-                }
-            }
-            @if.isNotBlank = ${!String.isBlank(iconPath)}
+        # Override the href attribute of the apple touch icon tag in your site package
+        appleTouchIconTag = Shel.NeosBase:LinkTag {
+            attributes.rel = 'apple-touch-icon'
         }
 
-        faviconTag = TYPO3.TypoScript:Tag {
-            tagName = 'link'
-            iconPath = ''
-            @context.iconPath = ${this.iconPath}
+        # Override the href attribute of the favicon tag in your site package
+        faviconTag = Shel.NeosBase:LinkTag {
             attributes {
                 rel = 'shortcut icon'
                 type = 'image/x-icon'
-                href = TYPO3.TypoScript:ResourceUri {
-                    path = ${iconPath}
-                }
-
             }
-            @if.isNotBlank = ${!String.isBlank(iconPath)}
         }
 
         stylesheets {
-            main = TYPO3.TypoScript:Tag {
-                tagName = 'link'
-                cssPath = ''
-                @context.cssPath = ${this.cssPath}
-                attributes {
-                    rel = 'stylesheet'
-                    media = 'all'
-                    href = TYPO3.TypoScript:ResourceUri {
-                        path = ${cssPath}
-                    }
-                }
-                @if.isNotBlank = ${!String.isBlank(cssPath)}
-            }
+            # Override the href attribute of the main styles tag in your site package
+            main = Shel.NeosBase:StyleSheetTag
+        }
+
+        javascripts {
+            # Override the src attribute of the main styles tag in your site package
+            modernizr = Shel.NeosBase:ScriptTag
         }
     }
 
     body {
         javascripts {
-            bundle = TYPO3.TypoScript:Tag {
-                tagName = 'script'
-                scriptPath = ''
-                @context.scriptPath = ${this.scriptPath}
-                attributes {
-                    async = 'async'
-                    src = TYPO3.TypoScript:ResourceUri {
-                        path = ${scriptPath}
-                    }
-                }
-                @if.isNotBlank = ${!String.isBlank(scriptPath)}
+            # Override the src attribute of your javascripts bundle file in your site package
+            bundle = Shel.NeosBase:ScriptTag {
+                async = true
             }
         }
     }
