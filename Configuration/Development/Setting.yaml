@@ -1,0 +1,5 @@
+TYPO3:
+  Flow:
+    security:
+      session:
+        inactivityTimeout: 0 # Disable session timeout while developing
