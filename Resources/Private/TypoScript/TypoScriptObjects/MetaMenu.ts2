@@ -6,15 +6,15 @@ prototype(Shel.NeosBase:MetaMenu) < prototype(TYPO3.Neos:Menu) {
 
     itemCollection = ${q(site).find('[instanceof TYPO3.Neos:Document]').filter('[showInMetaMenu = true]').get()}
 
-    active.attributes >
-    current.attributes >
-    normal.attributes >
+    active >
+    current >
+    normal >
 
+    @cache >
     @cache {
         mode = 'cached'
         entryIdentifier {
-            documentNode >
-            node = ${node}
+            identifier = 'metamenu'
         }
         entryTags {
             1 = 'NodeType_TYPO3.Neos:Document'
