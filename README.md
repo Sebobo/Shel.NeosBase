@@ -26,7 +26,28 @@ with other packages to quickly setup a new website.
 ### Viewhelpers
 
 * `EmbedViewHelper` allows to embed file content via fluid, for example svg files.
-* `FlattenViewHelper` renders an two-dimensional array as simple string for sending form data via mail.
+* `FlattenViewHelper` renders an two-dimensional array as simple string for sending form data via mail.   
+* `TagViewHelper` renders a tag with defined attributes. Instead of writing something like this in your node templates `<div{attributes ->f:format.raw()}>` you can now write `<snb:tag attributes="{attributes}" tag="div">`    
+
+To use them, add the following to your fluid template:
+
+    {namespace snb=Shel\NeosBase\ViewHelpers}  
+    
+Or when you want autocompletion add instead the following to the beginning of your template:
+
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+          xmlns:snb="https://xsd.helzle.it/ns/Shel/NeosBase/ViewHelpers">
+          
+Afterwards alt-click on the schema url and tell PhpStorm to fetch the schema from the external resource. 
+    
+#### Fluid viewhelper schemas 
+
+For autocompletion you can add the viewhelper schema to PhpStorm.
+The schema is in the package folder at `Documentation/Schema.xsd`.
+
+To rebuild the Fluid viewhelper schema for this package run this:
+
+    ./flow documentation:generatexsd --phpNamespace "Shel\NeosBase\ViewHelpers" --targetFile Packages/Plugins/Shel.NeosBase/Documentation/Schema.xsd --xsdNamespace "https://helzle.it/ns/Shel/NeosBase/ViewHelpers"
 
 ### Validators
 
@@ -58,3 +79,4 @@ To easily include your javascript bundle see the ts path `body.javascripts.bundl
 * `Shel.NeosBase:MetaMenu` is a menu which renders all documents marked with the `Show in meta menu` property, provided by the `Shel.NeosBase:MetaMenuMixin`.
 * `Shel.NeosBase:SiteLogo` is a configurable helper to render the site logo including the link to the homepage
 * `Shel.NeosBase:LinkTag`, `Shel.NeosBase:ScriptTag`, `Shel.NeosBase:MetaTag`, `Shel.NeosBase:StyleSheetTag` make it easier to add custom tags to document 
+
