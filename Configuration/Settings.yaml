@@ -18,6 +18,7 @@ TYPO3:
               - 'TYPO3.Form:SingleLineText'
             properties:
               elementClassAttribute: 'hidden'
+              containerClassAttribute: 'hidden'
             renderingOptions:
               templatePathPattern: 'resource://{@package}/Private/Form/{@type}.html'
             validators:
