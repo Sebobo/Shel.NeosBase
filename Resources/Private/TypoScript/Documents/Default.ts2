@@ -69,8 +69,8 @@ prototype(Shel.NeosBase:DefaultPage) < prototype(TYPO3.Neos:Page) {
 
     liveReload = TYPO3.TypoScript:Tag {
         tagName = 'script'
-        content = ${'document.write(\'<script src="http://\' + (location.host || \'localhost\').split(\':\')[0] + \':' + Configuration.setting('Shel.NeosBase.debug.liveReload.port') + '/livereload.js?snipver=1"></\' + \'script>\')'}
-        @position = 'after bodyTag 200'
+        content = ${'document.write(\'<script async src="http://\' + (location.host || \'localhost\').split(\':\')[0] + \':' + Configuration.setting('Shel.NeosBase.debug.liveReload.port') + '/livereload.js?snipver=1"></\' + \'script>\')'}
+        @position = 'before closingBodyTag'
         @if {
             inLiveWorkspace = ${node.context.workspaceName == 'live'}
             isEnabled = ${Configuration.setting('Shel.NeosBase.debug.liveReload.enabled')}
