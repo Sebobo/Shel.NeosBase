@@ -5,6 +5,9 @@
             <trans-unit id="ui.label" xml:space="preserve">
                 <source>Rootpage</source>
             </trans-unit>
+            <trans-unit id="groups.site" xml:space="preserve">
+                <source>Site configuration</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
