@@ -59,9 +59,6 @@ class NeosApplication extends Flow
 
         // Define tasks
         $workflow
-            ->defineTask('app:buildProject', 'typo3.surf:localShell',[
-                'command' => sprintf('cd {workspacePath} && %s', escapeshellcmd('./build.sh')),
-            ])
             ->defineTask('app:optimizeAutoloader', 'typo3.surf:localShell',[
                 'command' => sprintf('cd {workspacePath} && %s dump-autoload --optimize', escapeshellcmd('composer')),
             ])
@@ -75,7 +72,7 @@ class NeosApplication extends Flow
 
         // Add tasks to stages
         $workflow
-            ->afterTask('typo3.surf:composer:localinstall', ['app:optimizeAutoloader', 'app:buildProject'])
+            ->afterTask('typo3.surf:composer:localinstall', ['app:optimizeAutoloader'])
             ->beforeStage('finalize', ['typo3.surf:shell:unsetResourceLinks'], $this)
             ->beforeStage('migrate', ['typo3.surf:shell:clearCaches'], $this)
             ->afterStage('transfer', 'typo3.surf:typo3:flow:copyconfiguration')
