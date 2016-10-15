@@ -15,10 +15,6 @@ with other packages to quickly setup a new website.
 * `Shel.NeosBase:MetaMenuMixin` can be added as super type to `TYPO3.Neos:Document` to mark pages to be shown with the `Shel.NeosBase:MetaMenu` ts object. For example in a site footer.
 * `Shel.NeosBase:RootPage` is a good starting point for a website which can have additional properties for the whole website. Change the type of your root node to this to use it.
 
-### Surf deployment helper
-
-* `NeosApplication` - simplifies Surf deployments by providing some good defaults.
-
 ### Form elements
 
 * `Shel.NeosBase:Honeypot` is a hidden form element which catches spam bots.
