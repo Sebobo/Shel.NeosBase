@@ -1,4 +1,4 @@
-'TYPO3.Neos:Document':
+'TYPO3.Neos.NodeTypes:Page':
   constraints:
     nodeTypes:
       'Shel.NeosBase:RootPage': false

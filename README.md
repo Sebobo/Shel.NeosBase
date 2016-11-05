@@ -12,8 +12,26 @@ with other packages to quickly setup a new website.
 
 ### NodeTypes
 
-* `Shel.NeosBase:MetaMenuMixin` can be added as super type to `TYPO3.Neos:Document` to mark pages to be shown with the `Shel.NeosBase:MetaMenu` ts object. For example in a site footer.
-* `Shel.NeosBase:RootPage` is a good starting point for a website which can have additional properties for the whole website. Change the type of your root node to this to use it.
+#### MetaMenuMixin 
+
+`Shel.NeosBase:MetaMenuMixin` can be added as super type 
+to `TYPO3.Neos:Document` to mark pages to be shown with 
+the `Shel.NeosBase:MetaMenu` ts object.
+For example in a site footer.
+
+#### RootPage
+
+`Shel.NeosBase:RootPage` is a good starting point for a website which 
+can have additional properties for the whole website. 
+Change the type of your root node to this to use it.
+
+You should add the following constraint to your document types to
+only allow the `RootPage` as site root and adapt it to your nodenames:
+
+    'My.Package:MyDocumentType':
+      constraints:
+        nodeTypes:
+          'Shel.NeosBase:RootPage': false
 
 ### Form elements
 
@@ -29,7 +47,8 @@ To use them, add the following to your fluid template:
 
     {namespace snb=Shel\NeosBase\ViewHelpers}  
     
-Or when you want autocompletion add instead the following to the beginning of your template:
+Or when you want autocompletion add instead the following to the 
+beginning of your template:
 
     <html xmlns="http://www.w3.org/1999/xhtml" lang="en"
           xmlns:snb="https://xsd.helzle.it/ns/Shel/NeosBase/ViewHelpers">
