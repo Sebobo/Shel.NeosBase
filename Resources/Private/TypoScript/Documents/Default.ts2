@@ -53,13 +53,15 @@ prototype(Shel.NeosBase:DefaultPage) < prototype(TYPO3.Neos:Page) {
         }
 
         javascripts {
-            # Override the src attribute of the main styles tag in your site package
-            modernizr = Shel.NeosBase:ScriptTag
+            # Only add absolutely necessary tags here from your site package
         }
     }
 
     body {
         javascripts {
+            # Override the src attribute of your modernizr script in your site package
+            modernizr = Shel.NeosBase:ScriptTag
+
             # Override the src attribute of your javascripts bundle file in your site package
             bundle = Shel.NeosBase:ScriptTag {
                 async = true
