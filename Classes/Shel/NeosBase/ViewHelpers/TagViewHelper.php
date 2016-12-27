@@ -5,7 +5,7 @@ namespace Shel\NeosBase\ViewHelpers;
  * This script belongs to the package "Shel.NeosBase".                    *
  *                                                                        */
 
-use TYPO3\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
+use Neos\FluidAdaptor\Core\ViewHelper\AbstractTagBasedViewHelper;
 
 /**
  * A view helper for rendering a simple tag with an array of attributes

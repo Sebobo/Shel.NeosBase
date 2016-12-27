@@ -7,9 +7,9 @@ namespace Shel\NeosBase\ViewHelpers;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\ResourceManagement\PersistentResource;
-use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3\Fluid\Core\ViewHelper\Exception as ViewHelperException;
-use TYPO3\Fluid\Core\ViewHelper\Exception\InvalidVariableException;
+use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
+use Neos\FluidAdaptor\Core\ViewHelper\Exception as ViewHelperException;
+use Neos\FluidAdaptor\Core\ViewHelper\Exception\InvalidVariableException;
 
 /**
  * A view helper for embedding file content into the page.

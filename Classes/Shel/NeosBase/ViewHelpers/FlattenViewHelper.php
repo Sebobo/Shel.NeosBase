@@ -6,8 +6,8 @@ namespace Shel\NeosBase\ViewHelpers;
  *                                                                        */
 
 use Neos\Flow\Annotations as Flow;
-use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3\Fluid\Core\ViewHelper\Exception as ViewHelperException;
+use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
+use Neos\FluidAdaptor\Core\ViewHelper\Exception as ViewHelperException;
 
 /**
  * A view helper for flattening a variable be it array or string
