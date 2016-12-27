@@ -1,14 +1,4 @@
 
-TYPO3:
-  Neos:
-    typoScript:
-      autoInclude:
-        Shel.NeosBase: true
-    userInterface:
-      translation:
-        autoInclude:
-          Shel.NeosBase:
-            - 'NodeTypes/*'
 Shel:
   NeosBase:
     debug:
@@ -34,3 +24,12 @@ Neos:
         validatorPresets:
           'Shel.NeosBase:IsEmpty':
             implementationClassName: Shel\NeosBase\Validation\Validator\IsEmptyValidator
+  Neos:
+    typoScript:
+      autoInclude:
+        Shel.NeosBase: true
+    userInterface:
+      translation:
+        autoInclude:
+          Shel.NeosBase:
+            - 'NodeTypes/*'
