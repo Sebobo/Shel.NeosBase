@@ -6,8 +6,8 @@ namespace Shel\NeosBase\Validation\Validator;
  * This script belongs to the package "Shel.NeosBase".                    *
  *                                                                        */
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Validation\Validator\AbstractValidator;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Validation\Validator\AbstractValidator;
 
 /**
  * Validator for empty values.

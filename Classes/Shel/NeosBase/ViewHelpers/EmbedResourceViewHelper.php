@@ -5,8 +5,8 @@ namespace Shel\NeosBase\ViewHelpers;
  * This script belongs to the package "Shel.NeosBase".                    *
  *                                                                        */
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\ResourceManagement\PersistentResource;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\ResourceManagement\PersistentResource;
 use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\Fluid\Core\ViewHelper\Exception as ViewHelperException;
 use TYPO3\Fluid\Core\ViewHelper\Exception\InvalidVariableException;
