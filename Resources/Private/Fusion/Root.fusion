@@ -1,4 +1,4 @@
-include: TypoScriptObjects/*.fusion
+include: FusionObjects/*.fusion
 include: Documents/*.fusion
 
 root {

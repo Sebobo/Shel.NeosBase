@@ -1,5 +1,5 @@
 prototype(Shel.NeosBase:SiteLogo) < prototype(Neos.Fusion:Template) {
-    templatePath = 'resource://Shel.NeosBase/Private/Templates/TypoScriptObjects/SiteLogo.html'
+    templatePath = 'resource://Shel.NeosBase/Private/Templates/FusionObjects/SiteLogo.html'
     sectionName = 'SiteLogo'
     attributes = Neos.Fusion:Attributes {
         class = 'site-logo'
