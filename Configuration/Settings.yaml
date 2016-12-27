@@ -25,11 +25,11 @@ Neos:
           'Shel.NeosBase:IsEmpty':
             implementationClassName: Shel\NeosBase\Validation\Validator\IsEmptyValidator
   Neos:
-    typoScript:
-      autoInclude:
-        Shel.NeosBase: true
     userInterface:
       translation:
         autoInclude:
           Shel.NeosBase:
             - 'NodeTypes/*'
+    fusion:
+      autoInclude:
+        Shel.NeosBase: true
