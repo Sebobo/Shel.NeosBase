@@ -6,7 +6,7 @@ namespace Shel\NeosBase\ViewHelpers;
  *                                                                        */
 
 use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Resource\Resource;
+use TYPO3\Flow\ResourceManagement\PersistentResource;
 use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\Fluid\Core\ViewHelper\Exception as ViewHelperException;
 use TYPO3\Fluid\Core\ViewHelper\Exception\InvalidVariableException;
