@@ -1,1 +1,1 @@
-prototype(TYPO3.Neos.NodeTypes:Page.Document) < prototype(Shel.NeosBase:DefaultPage)
+prototype(Neos.NodeTypes:Page.Document) < prototype(Shel.NeosBase:DefaultPage)
