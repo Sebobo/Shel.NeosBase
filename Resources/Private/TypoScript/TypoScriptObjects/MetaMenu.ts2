@@ -1,10 +1,10 @@
-prototype(Shel.NeosBase:MetaMenu) < prototype(TYPO3.Neos:Menu) {
+prototype(Shel.NeosBase:MetaMenu) < prototype(Neos.Neos:Menu) {
     templatePath = 'resource://Shel.NeosBase/Private/Templates/TypoScriptObjects/MetaMenu.html'
     sectionName = 'Main'
 
     attributes.class = 'shel-neosbase-metamenu'
 
-    itemCollection = ${q(site).find('[instanceof TYPO3.Neos:Document]').filter('[showInMetaMenu = true]').get()}
+    itemCollection = ${q(site).find('[instanceof Neos.Neos:Document]').filter('[showInMetaMenu = true]').get()}
 
     active >
     current >
@@ -17,7 +17,7 @@ prototype(Shel.NeosBase:MetaMenu) < prototype(TYPO3.Neos:Menu) {
             identifier = 'metamenu'
         }
         entryTags {
-            1 = 'NodeType_TYPO3.Neos:Document'
+            1 = 'NodeType_Neos.Neos:Document'
         }
     }
 }
