@@ -1,35 +1,36 @@
+
 TYPO3:
   Neos:
     typoScript:
       autoInclude:
-        'Shel.NeosBase': true
-
+        Shel.NeosBase: true
     userInterface:
       translation:
         autoInclude:
-          'Shel.NeosBase': ['NodeTypes/*']
-
-  Form:
-    presets:
-      default:
-        formElementTypes:
-          'Shel.NeosBase:Honeypot':
-            superTypes:
-              - 'TYPO3.Form:SingleLineText'
-            properties:
-              elementClassAttribute: 'hidden'
-              containerClassAttribute: 'hidden'
-            renderingOptions:
-              templatePathPattern: 'resource://{@package}/Private/Form/{@type}.html'
-            validators:
-              - identifier: 'Shel.NeosBase:IsEmpty'
-        validatorPresets:
-          'Shel.NeosBase:IsEmpty':
-            implementationClassName: 'Shel\NeosBase\Validation\Validator\IsEmptyValidator'
-
+          Shel.NeosBase:
+            - 'NodeTypes/*'
 Shel:
   NeosBase:
     debug:
       liveReload:
         enabled: false
         port: 35729
+Neos:
+  Form:
+    presets:
+      default:
+        formElementTypes:
+          'Shel.NeosBase:Honeypot':
+            superTypes:
+              - 'Neos.Form:SingleLineText'
+            properties:
+              elementClassAttribute: hidden
+              containerClassAttribute: hidden
+            renderingOptions:
+              templatePathPattern: 'resource://{@package}/Private/Form/{@type}.html'
+            validators:
+              -
+                identifier: 'Shel.NeosBase:IsEmpty'
+        validatorPresets:
+          'Shel.NeosBase:IsEmpty':
+            implementationClassName: Shel\NeosBase\Validation\Validator\IsEmptyValidator
