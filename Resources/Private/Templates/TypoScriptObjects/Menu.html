@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en"
-      xmlns:ts="http://typo3.org/ns/TYPO3/TypoScript/ViewHelpers"
-      xmlns:neos="http://typo3.org/ns/TYPO3/Neos/ViewHelpers"
-      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers">
-<body>
+      xmlns:neos="https://neos.io/ns/Neos/Neos/ViewHelpers"
+      xmlns:f="https://neos.io/ns/Neos/Fluid/ViewHelpers"
+      xmlns:fusion="https://neos.io/ns/Neos/Fusion/ViewHelpers">
 <f:section name="Menu">
     <nav{attributes -> f:format.raw()}>
         <ul>
@@ -16,7 +15,7 @@
     <f:if condition="{items -> f:count()}">
         <f:then>
             <f:for each="{items}" as="item">
-                <li{ts:render(path:'{item.state}.attributes', context: {item: item}) -> f:format.raw()}>
+                <li{fusion:render(path:'{item.state}.attributes', context: {item: item}) -> f:format.raw()}>
                     <neos:link.node node="{item.node}"
                                     title="{f:if(condition: item.node.properties.titleOverride, then: item.node.properties.titleOverride, else: item.node.label)}">
                         {item.label}
@@ -38,4 +37,4 @@
         </f:else>
     </f:if>
 </f:section>
-</body>
+</html>

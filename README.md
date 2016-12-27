@@ -15,7 +15,7 @@ with other packages to quickly setup a new website.
 #### MetaMenuMixin 
 
 `Shel.NeosBase:MetaMenuMixin` can be added as super type 
-to `TYPO3.Neos:Document` to mark pages to be shown with 
+to `Neos.Neos:Document` to mark pages to be shown with 
 the `Shel.NeosBase:MetaMenu` ts object.
 For example in a site footer.
 
