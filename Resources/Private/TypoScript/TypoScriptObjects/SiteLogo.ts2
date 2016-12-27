@@ -1,7 +1,7 @@
-prototype(Shel.NeosBase:SiteLogo) < prototype(TYPO3.TypoScript:Template) {
+prototype(Shel.NeosBase:SiteLogo) < prototype(Neos.Fusion:Template) {
     templatePath = 'resource://Shel.NeosBase/Private/Templates/TypoScriptObjects/SiteLogo.html'
     sectionName = 'SiteLogo'
-    attributes = TYPO3.TypoScript:Attributes {
+    attributes = Neos.Fusion:Attributes {
         class = 'site-logo'
     }
 
@@ -9,11 +9,11 @@ prototype(Shel.NeosBase:SiteLogo) < prototype(TYPO3.TypoScript:Template) {
     logoSrc = ''
     @context.logoSrc = ${this.logoSrc}
 
-    logo = TYPO3.TypoScript:Tag {
+    logo = Neos.Fusion:Tag {
         tagName = 'img'
         attributes {
             alt = 'Site logo'
-            src = TYPO3.TypoScript:ResourceUri {
+            src = Neos.Fusion:ResourceUri {
                 path = ${logoSrc}
             }
         }

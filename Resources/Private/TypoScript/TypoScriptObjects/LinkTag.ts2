@@ -1,4 +1,4 @@
-prototype(Shel.NeosBase:LinkTag) < prototype(TYPO3.TypoScript:Tag) {
+prototype(Shel.NeosBase:LinkTag) < prototype(Neos.Fusion:Tag) {
     tagName = 'link'
 
     src = ''
@@ -10,11 +10,11 @@ prototype(Shel.NeosBase:LinkTag) < prototype(TYPO3.TypoScript:Tag) {
     }
 
     attributes {
-        src = TYPO3.TypoScript:ResourceUri {
+        src = Neos.Fusion:ResourceUri {
             path = ${src}
             @if.set = ${!String.isBlank(src)}
         }
-        href = TYPO3.TypoScript:ResourceUri {
+        href = Neos.Fusion:ResourceUri {
             path = ${href}
             @if.set = ${!String.isBlank(href)}
         }

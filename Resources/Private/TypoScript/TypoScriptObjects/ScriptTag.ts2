@@ -1,4 +1,4 @@
-prototype(Shel.NeosBase:ScriptTag) < prototype(TYPO3.TypoScript:Tag) {
+prototype(Shel.NeosBase:ScriptTag) < prototype(Neos.Fusion:Tag) {
     tagName = 'script'
     src = ''
     async = null
@@ -9,7 +9,7 @@ prototype(Shel.NeosBase:ScriptTag) < prototype(TYPO3.TypoScript:Tag) {
     attributes {
         async = ${async ? 'async' : null}
         async.@if.set = ${async}
-        src = TYPO3.TypoScript:ResourceUri {
+        src = Neos.Fusion:ResourceUri {
             path = ${src}
         }
     }
