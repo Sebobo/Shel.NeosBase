@@ -1,5 +1,5 @@
-include: TypoScriptObjects/**/*.ts2
-include: Documents/**/*.ts2
+include: TypoScriptObjects/*.fusion
+include: Documents/*.fusion
 
 root {
     default {
