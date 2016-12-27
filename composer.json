@@ -7,8 +7,8 @@
         "neos/neos": "~3.0"
     },
     "autoload": {
-        "psr-0": {
-            "Shel\\NeosBase": "Classes"
+        "psr-4": {
+            "Shel\\NeosBase\\": "Classes"
         }
     },
     "extra": {
