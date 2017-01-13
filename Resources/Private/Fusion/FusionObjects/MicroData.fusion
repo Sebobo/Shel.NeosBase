@@ -1,0 +1,9 @@
+prototype(Shel.NeosBase:MicroData) < prototype(Neos.Fusion:Tag) {
+    tagName = 'script'
+    attributes.type = 'application/ld+json'
+
+    content = Neos.Fusion:RawArray {
+        '@context' = 'http://schema.org'
+        @process.toJson = ${Json.stringify(value)}
+    }
+}
