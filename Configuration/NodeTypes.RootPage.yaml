@@ -4,3 +4,4 @@
     'Neos.NodeTypes:Page': true
   ui:
     label: i18n
+    icon: 'icon-globe'
