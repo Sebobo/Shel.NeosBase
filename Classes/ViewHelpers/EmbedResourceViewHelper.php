@@ -6,10 +6,9 @@ namespace Shel\NeosBase\ViewHelpers;
  *                                                                        */
 
 use Neos\Flow\Annotations as Flow;
-use Neos\Flow\ResourceManagement\PersistentResource;
 use Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper;
-use Neos\FluidAdaptor\Core\ViewHelper\Exception as ViewHelperException;
 use Neos\FluidAdaptor\Core\ViewHelper\Exception\InvalidVariableException;
+use Shel\NeosBase\Service\ResourceService;
 
 /**
  * A view helper for embedding file content into the page.
@@ -23,6 +22,12 @@ use Neos\FluidAdaptor\Core\ViewHelper\Exception\InvalidVariableException;
  */
 class EmbedResourceViewHelper extends AbstractViewHelper
 {
+    /**
+     * @Flow\Inject
+     * @var ResourceService
+     */
+    protected $resourceService;
+
     /**
      * @var boolean
      */
@@ -38,20 +43,6 @@ class EmbedResourceViewHelper extends AbstractViewHelper
      */
     public function render($path = null, Resource $resource = null)
     {
-        $data = '';
-        if ($resource !== null) {
-            $dataStream = $resource->getStream();
-
-            if ($dataStream) {
-                $data = $dataStream->read($dataStream->getSize());
-            }
-        } else {
-            if ($path === null) {
-                throw new InvalidVariableException('The ResourceViewHelper did neither contain a valuable "resource" nor "path" argument.', 1457673112);
-            }
-
-            $data = file_get_contents($path);
-        }
-        return $data;
+        return $this->resourceService->loadResourceContent($path, $resource);
     }
 }

@@ -3,8 +3,12 @@
     <file original="" product-name="Shel.NeosBase" source-language="en" target-language="de" datatype="plaintext">
         <body>
             <trans-unit id="fusionObjects.siteLogo.title" xml:space="preserve">
-                <source>Go back to {0}</source>
-                <target>Zurück zu {0}</target>
+                <source>Go to {0}</source>
+                <target>Zu {0}</target>
+            </trans-unit>
+            <trans-unit id="fusionObjects.siteLogo.altText" xml:space="preserve">
+                <source>Logo of {0}</source>
+                <target>Logo von {0}</target>
             </trans-unit>
         </body>
     </file>

@@ -1,0 +1,5 @@
+prototype(Shel.NeosBase:EmbeddedSvg) {
+    @class = 'Shel\\NeosBase\\FusionObjects\\EmbeddedSvgImplementation'
+    path = ''
+    resource = ''
+}

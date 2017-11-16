@@ -1,22 +1,42 @@
-prototype(Shel.NeosBase:SiteLogo) < prototype(Neos.Fusion:Template) {
-    templatePath = 'resource://Shel.NeosBase/Private/Templates/FusionObjects/SiteLogo.html'
-    sectionName = 'SiteLogo'
+prototype(Shel.NeosBase:SiteLogo) < prototype(Neos.Fusion:Tag) {
+    tagName = 'figure'
     attributes = Neos.Fusion:Attributes {
         class = 'site-logo'
     }
 
-    targetNode = ${site}
+    href = Neos.Fusion:NodeUri {
+        node = ${site}
+    }
+    @context.href = ${this.href}
+
+    label = ${site.label}
+    @context.label = ${this.label}
+
     logoSrc = ''
     @context.logoSrc = ${this.logoSrc}
+
+    altText = ${I18n.translate('fusionObjects.siteLogo.altText', 'Logo of {0}', [label], 'Main', 'Shel.NeosBase')}
+    @context.altText = ${this.altText}
 
     logo = Neos.Fusion:Tag {
         tagName = 'img'
         attributes {
-            alt = 'Site logo'
+            alt = ${altText}
             src = Neos.Fusion:ResourceUri {
                 path = ${logoSrc}
             }
         }
     }
-    @if.isNotBlank = ${!String.isBlank(logoSrc)}
+    @context.logo = ${this.logo}
+
+    content = Neos.Fusion:Tag {
+        tagName = 'a'
+        attributes {
+            href = ${href}
+            title = ${I18n.translate('fusionObjects.siteLogo.title', 'Go back to homepage', [label], 'Main', 'Shel.NeosBase')}
+        }
+        content = ${logo}
+    }
+
+    @if.hasLogoSrc = ${!String.isBlank(logoSrc)}
 }
