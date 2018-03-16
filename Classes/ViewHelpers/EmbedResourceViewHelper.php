@@ -37,11 +37,11 @@ class EmbedResourceViewHelper extends AbstractViewHelper
      * Render the URI to the resource. The filename is used from child content.
      *
      * @param string $path The location of the resource, can be either a path relative to the Public resource directory of the package or a resource://... URI
-     * @param Resource $resource If specified, this resource object is used instead of the path and package information
+     * @param string $resource If specified, this resource object is used instead of the path and package information
      * @return string The content of the specified file
      * @throws InvalidVariableException
      */
-    public function render($path = null, Resource $resource = null)
+    public function render($path = null, $resource = null)
     {
         return $this->resourceService->loadResourceContent($path, $resource);
     }
