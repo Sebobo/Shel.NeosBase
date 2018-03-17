@@ -92,6 +92,6 @@ To easily include your javascript bundle see the ts path `body.javascripts.bundl
 
 * `Shel.NeosBase:Navigation` is a menu to be used for the main site navigation
 * `Shel.NeosBase:MetaMenu` is a menu which renders all documents marked with the `Show in meta menu` property, provided by the `Shel.NeosBase:MetaMenuMixin`.
-* `Shel.NeosBase:SiteLogo` is a configurable helper to render the site logo including the link to the homepage
-* `Shel.NeosBase:LinkTag`, `Shel.NeosBase:ScriptTag`, `Shel.NeosBase:MetaTag`, `Shel.NeosBase:StyleSheetTag` make it easier to add custom tags to document 
-
+* `Shel.NeosBase:SiteLogo` is a configurable helper to render the site logo including the link to the homepage.
+* `Shel.NeosBase:LinkTag`, `Shel.NeosBase:ScriptTag`, `Shel.NeosBase:MetaTag`, `Shel.NeosBase:StyleSheetTag` make it easier to add custom tags to document. 
+* `Shel.NeosBase:Debug` is a fusion helper to output a fusion value to the browser console.
