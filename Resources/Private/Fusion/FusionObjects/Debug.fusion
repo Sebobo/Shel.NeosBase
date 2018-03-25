@@ -1,12 +1,24 @@
 ##
+# This object will output fusion variables to the browser console.
+#
 # Example usage:
 #
 # @process.addDebugOutput = Shel.NeosBase:Debug {
 #     output = ${node.identifier}
 # }
 #
+# Which will prepend the current node oder document node label by default.
+#
+# To have a custom title do this:
+#
+# @process.addDebugOutput = Shel.NeosBase:Debug {
+#     title = 'My node identifier'
+#     output = ${node.identifier}
+# }
+#
 prototype(Shel.NeosBase:Debug) < prototype(Neos.Fusion:Value) {
     value = ${value}
+    title = ${node ? node.label : (documentNode ? documentNode.label : 'Untitled')}
     output = ''
-    @process.addDebugOutput = ${value + '<script>console.log(' + Json.stringify(this.output) + ');</script>'}
+    @process.addDebugOutput = ${value + '<script>console.log("' + this.title + ':",' + Json.stringify(this.output) + ');</script>'}
 }
