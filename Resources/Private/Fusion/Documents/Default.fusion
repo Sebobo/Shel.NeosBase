@@ -78,4 +78,14 @@ prototype(Shel.NeosBase:DefaultPage) < prototype(Neos.Neos:Page) {
             isEnabled = ${Configuration.setting('Shel.NeosBase.debug.liveReload.enabled')}
         }
     }
+    browserSync = Neos.Fusion:Tag {
+        tagName = 'script'
+        attributes.id = '__bs_script__'
+        content = ${'document.write("<script async src=\'http://HOST:' + Configuration.setting('Shel.NeosBase.debug.browserSync.port') + '/browser-sync/browser-sync-client.js?v=2.19.0\'><\/script>".replace("HOST", location.hostname));'}
+        @position = 'before closingBodyTag'
+        @if {
+            inLiveWorkspace = ${node.context.workspaceName == 'live'}
+            isEnabled = ${Configuration.setting('Shel.NeosBase.debug.browserSync.enabled')}
+        }
+    }
 }

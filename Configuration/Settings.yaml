@@ -4,6 +4,9 @@ Shel:
       liveReload:
         enabled: false
         port: 35729
+      browserSync:
+        enabled: false
+        port: 3000
 Neos:
   Form:
     presets:
