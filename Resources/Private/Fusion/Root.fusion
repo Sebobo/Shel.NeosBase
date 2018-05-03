@@ -1,9 +1,1 @@
-include: FusionObjects/*.fusion
-include: Documents/*.fusion
-
-root {
-    default {
-        type = ${q(node).property('_nodeType') + '.Document'}
-        renderPath >
-    }
-}
+include: **/*.fusion

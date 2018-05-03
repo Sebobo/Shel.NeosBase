@@ -1,1 +1,1 @@
-prototype(Shel.NeosBase:RootPage.Document) < prototype(Shel.NeosBase:DefaultPage)
+prototype(Shel.NeosBase:RootPage) < prototype(Neos.NodeTypes:Page)

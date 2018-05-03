@@ -1,4 +1,4 @@
-prototype(Shel.NeosBase:DefaultPage) < prototype(Neos.Neos:Page) {
+prototype(Neos.NodeTypes:Page) {
     # Don't render unnecessary lastVisitedNodeScript in live workspace
     lastVisitedNodeScript.@if.notLive = ${node.context.workspace.name != 'live'}
 
