@@ -81,7 +81,7 @@ prototype(Neos.NodeTypes:Page) {
     browserSync = Neos.Fusion:Tag {
         tagName = 'script'
         attributes.id = '__bs_script__'
-        content = ${'document.write("<script async src=\'http://HOST:' + Configuration.setting('Shel.NeosBase.debug.browserSync.port') + '/browser-sync/browser-sync-client.js?v=2.19.0\'><\/script>".replace("HOST", location.hostname));'}
+        content = ${'document.write("<script async src=\'//HOST:' + Configuration.setting('Shel.NeosBase.debug.browserSync.port') + '/browser-sync/browser-sync-client.js?v=2.19.0\'><\/script>".replace("HOST", location.hostname));'}
         @position = 'before closingBodyTag'
         @if {
             inLiveWorkspace = ${node.context.workspaceName == 'live'}
