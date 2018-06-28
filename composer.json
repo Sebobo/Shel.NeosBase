@@ -6,6 +6,9 @@
     "require": {
         "neos/neos": "~3.0 || ~4.0"
     },
+    "suggest": {
+        "neos/form": "The package has some helpers for the neos form package"
+    },
     "autoload": {
         "psr-4": {
             "Shel\\NeosBase\\": "Classes"
