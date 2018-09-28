@@ -1,7 +1,7 @@
 
 'Shel.NeosBase:RootPage':
   superTypes:
-    'Neos.Neos:Page': true
+    'Neos.Neos:Document': true
   ui:
     label: i18n
     icon: 'icon-globe'
