@@ -1,5 +1,5 @@
-prototype(Neos.NodeTypes:Page) {
-    # Don't render unnecessary lastVisitedNodeScript in live workspace
+prototype(Neos.Neos:Page) {
+    # Don't render lastVisitedNodeScript in live workspace as we usually don't need it
     lastVisitedNodeScript.@if.notLive = ${node.context.workspace.name != 'live'}
 
     htmlTag {
