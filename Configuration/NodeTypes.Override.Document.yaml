@@ -1,4 +1,4 @@
-'Neos.NodeTypes:Page':
+'Neos.Neos:Page':
   constraints:
     nodeTypes:
       'Shel.NeosBase:RootPage': false
