@@ -1,5 +1,0 @@
-# Make Flow sessions data a persistent cache, so sessions don't get lost between deployments
-Flow_Session_MetaData:
-  persistent: true
-Flow_Session_Storage:
-  persistent: true
