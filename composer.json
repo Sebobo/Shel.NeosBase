@@ -4,7 +4,7 @@
     "description": "Neos CMS base helper package",
     "license": "MIT",
     "require": {
-        "neos/neos": "~4.3 || ~5.0"
+        "neos/neos": "~4.3 || ~5.0 || ~7.0"
     },
     "suggest": {
         "neos/form": "The package has some helpers for the neos form package"
