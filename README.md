@@ -28,10 +28,12 @@ Change the type of your root node to this to use it.
 You should add the following constraint to your document types to
 only allow the `RootPage` as site root and adapt it to your nodenames:
 
-    'My.Package:MyDocumentType':
-      constraints:
-        nodeTypes:
-          'Shel.NeosBase:RootPage': false
+```yaml
+"My.Package:MyDocumentType":
+ constraints:
+  nodeTypes:
+   "Shel.NeosBase:RootPage": false
+```
 
 ### Form elements
 
@@ -45,14 +47,16 @@ only allow the `RootPage` as site root and adapt it to your nodenames:
 
 To use them, add the following to your fluid template:
 
-    {namespace snb=Shel\NeosBase\ViewHelpers}  
-    
+```fluid
+{namespace snb=Shel\NeosBase\ViewHelpers}  
+```    
 Or when you want autocompletion add instead the following to the 
 beginning of your template:
 
-    <html xmlns="http://www.w3.org/1999/xhtml" lang="en"
-          xmlns:snb="https://xsd.helzle.it/ns/Shel/NeosBase/ViewHelpers">
-          
+```xml
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:snb="https://xsd.helzle.it/ns/Shel/NeosBase/ViewHelpers">
+```          
 Afterwards alt-click on the schema url and tell PhpStorm to fetch the schema from the external resource. 
     
 #### Fluid viewhelper schemas 
@@ -62,7 +66,9 @@ The schema is in the package folder at `Documentation/Schema.xsd`.
 
 To rebuild the Fluid viewhelper schema for this package run this:
 
-    ./flow documentation:generatexsd --phpNamespace "Shel\NeosBase\ViewHelpers" --targetFile Packages/Plugins/Shel.NeosBase/Documentation/Schema.xsd --xsdNamespace "https://helzle.it/ns/Shel/NeosBase/ViewHelpers"
+```console
+./flow documentation:generatexsd --phpNamespace "Shel\NeosBase\ViewHelpers" --targetFile Packages/Plugins/Shel.NeosBase/Documentation/Schema.xsd --xsdNamespace "https://helzle.it/ns/Shel/NeosBase/ViewHelpers"
+```
 
 ### Validators
 
