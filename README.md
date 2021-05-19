@@ -4,6 +4,14 @@
 [![Total Downloads](https://poser.pugx.org/shel/neosbase/downloads)](https://packagist.org/packages/shel/neosbase)
 [![License](https://poser.pugx.org/shel/neosbase/license)](https://packagist.org/packages/shel/neosbase)
 
+⚠️ **NOTE**
+
+This package is not being further developed anymore as most features have been replaced over the years with Neos core functionality.
+You can still copy parts you might need, but it's not recommended to be installed anymore.
+
+
+## Description
+
 This package works as starting point for Neos CMS projects.
 It provides good defaults needed in many projects and can be combined
 with other packages to quickly setup a new website.
